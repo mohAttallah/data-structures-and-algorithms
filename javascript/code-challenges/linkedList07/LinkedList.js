@@ -48,50 +48,17 @@ class LinkedList {
     currntNode.next = node;
   }
 
+  kthFromEnd(k) {
+    if (!this.head) return ("LinkedList is Empty");
+    if (k > this.size) return ("Exception")
+    let currntNode = this.head
+    let locationOfnode = this.size - k;
 
-  insertBefore(value, newValue) {
-    if (!this.head) {
-    // list is Empty
-    return;
+    for (let i = 1; i <= locationOfnode; i++) {
+      if (i !== 1) currntNode = currntNode.next;
     }
-    if (this.head.value === value) {
-      this.insert(newValue);
-      return;
-     }
-
-    let currntNode = this.head;
-    while (currntNode.next) {
-      if (currntNode.next.value === value) {
-        const newNode = new Node(newValue);
-        newNode.next = currntNode.next;
-        currntNode.next = newNode;
-        this.size++;
-        return;
-      }
-      currntNode = currntNode.next;
-    }
+    return currntNode.value;
   }
-
-
-  insertAfter(value, newValue) {
-    if (!this.head) {
-    // list is Empty
-    return;
-    }
-    let currntNode = this.head;
-    while (currntNode) {
-      if (currntNode.value === value) {
-        const newNode = new Node(newValue);
-        newNode.next = currntNode.next;
-        currntNode.next = newNode;
-        this.size++;
-        return;
-    }
-    currntNode = currntNode.next;
-    }
-    
-    
- }
 
   toString() {
     let str = "";
@@ -108,10 +75,12 @@ class LinkedList {
 module.exports = LinkedList;
 
 const list = new LinkedList();
+list.append(1);
 list.append(2);
-list.insertBefore(2, 1);
-list.insertAfter(2, 3)
+list.append(3);
+list.append(4);
+list.append(5);
+console.log(list.toString())
 
-console.log(list.toString());
-
+console.log(list.kthFromEnd(0));
 
