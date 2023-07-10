@@ -7,6 +7,9 @@ class Queue {
         this.front = null;
         this.lenght = 0;
     }
+    isEmpty() {
+        return this.front === null
+    }
 
     enQueue(value) {
         const newNode = new Node(value);
@@ -21,23 +24,30 @@ class Queue {
     }
 
     deQueue() {
-        if (this.isEmpty()) throw new Error('The Stacj is Empty');
+        if (this.isEmpty()) throw new Error('The Queue is Empty');
+        
         const temp = this.front;
-        this.front = temp.next;
+        this.front= temp.next;
+        
+        if (this.front === null) this.rear = null;
         this.lenght--;
-        return (temp.value);
+        return temp.value;
     }
-    isEmpty() {
-        return this.front === null
+    peek() {
+        if (this.isEmpty()) {
+            throw new Error('The Queue is Empty');
+        } else {
+            return this.front.value;
+        }
     }
+    
 }
 
 const QQ = new Queue;
 
 QQ.enQueue(1);
 QQ.enQueue(2);
-QQ.enQueue(3);
-QQ.enQueue(4);
+QQ.deQueue();
 QQ.deQueue();
 console.log(QQ);
 

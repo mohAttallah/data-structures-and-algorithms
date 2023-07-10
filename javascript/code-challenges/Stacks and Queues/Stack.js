@@ -21,7 +21,7 @@ class Stack {
     }
 
     pop() {
-        if (this.isEmpty()) throw new Error('The Stacj is Empty');
+        if (this.isEmpty()) throw new Error('The StacK is Empty');
         const temp = this.top;
         this.top = this.top.next;
         // cahnge the Arrow to null
@@ -30,8 +30,13 @@ class Stack {
         return temp.value;
     }
     peek() {
-        return this.isEmpty() ? null : this.top.value
+        if (this.isEmpty()) {
+            throw new Error('The Stack is Empty');
+        } else {
+            return this.top.value;
+        }   
     }
+    
     isEmpty() {
         return this.top === null
     }
