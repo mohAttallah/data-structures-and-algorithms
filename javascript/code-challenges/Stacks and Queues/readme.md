@@ -25,4 +25,8 @@ and Space time O(1)
 [Queue](Queue.js)
 
 ## test  
-![test pass ](Untitled.png)
+
+#### Queue test
+![test pass ](QueueTest.png)
+#### Stacks test
+![test pass ](StacksTest.jpg)
