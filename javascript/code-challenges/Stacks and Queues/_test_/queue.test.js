@@ -3,7 +3,7 @@
 
 'use strict';
 
-const Queue = require('../Queue');
+const Queue = require('../lib/Queue');
 
 describe('queue testing', () => {
     it('Create a new queue', () => {
