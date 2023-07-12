@@ -34,9 +34,9 @@ class Stack {
             throw new Error('The Stack is Empty');
         } else {
             return this.top.value;
-        }   
+        }
     }
-    
+
     isEmpty() {
         return this.top === null
     }

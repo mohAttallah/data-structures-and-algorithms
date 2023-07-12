@@ -1,6 +1,6 @@
 'use strict';
 
-const Stack = require('../Stack');
+const Stack = require('../lib/Stack');
 
 describe('Stack testing', () => {
     it('Create a new stack', () => {

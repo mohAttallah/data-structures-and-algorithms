@@ -10,9 +10,9 @@ This object should be aware of a default empty value assigned to front when the 
 ## Whiteboard Process
 <!-- Embedded whiteboard image -->
 #### Stacks
-![Stacks](Stacks.jpg)
+![Stacks](resource/Stacks.jpg)
 #### Queue
-![Queue](Queue.jpg)
+![Queue](resource/Queue.jpg)
 ## Approach & Efficiency
 <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
 Queue and Stacks is linear DataStructure 
@@ -21,12 +21,12 @@ and Space time O(1)
 
 ## Solution
 <!-- Show how to run your code, and examples of it in action -->
-[Stacks](Stack.js)
-[Queue](Queue.js)
+[Stacks](resource/Stack.js)
+[Queue](resource/Queue.js)
 
 ## test  
 
 #### Queue test
-![test pass ](QueueTest.png)
+![test pass ](resource/QueueTest.png)
 #### Stacks test
-![test pass ](StacksTest.jpg)
+![test pass ](resource/StacksTest.jpg)

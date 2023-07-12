@@ -25,10 +25,10 @@ class Queue {
 
     deQueue() {
         if (this.isEmpty()) throw new Error('The Queue is Empty');
-        
+
         const temp = this.front;
-        this.front= temp.next;
-        
+        this.front = temp.next;
+
         if (this.front === null) this.rear = null;
         this.lenght--;
         return temp.value;
@@ -40,7 +40,7 @@ class Queue {
             return this.front.value;
         }
     }
-    
+
 }
 
 const QQ = new Queue;
