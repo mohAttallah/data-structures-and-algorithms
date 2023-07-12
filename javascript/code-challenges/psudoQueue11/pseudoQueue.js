@@ -1,6 +1,5 @@
-'use strict'
-const Stack = require("./Stack");
-
+'use strict';
+const Stack = require('./Stack');
 
 class PseudoQueue {
     constructor() {
@@ -8,39 +7,32 @@ class PseudoQueue {
         this.stack2 = new Stack();
     }
 
-    enQueue(queue, value) {
-    // Move all elements from stack1 to stack2
-        
-    while (!isEmpty(queue.stack1)) {
-        push(queue.stack2, pop(queue.stack1));
+    enqueue(value) {
+        while (!this.stack1.isEmpty()) {
+            this.stack2.push(this.stack1.pop());
+        }
+        this.stack1.push(value);
+        while (!this.stack2.isEmpty()) {
+            this.stack1.push(this.stack2.pop());
+        }
     }
-
-    // Push the new value to stack1
-        
-    push(queue.stack1, value);
-
-    // Move all elements back from stack2 to stack1
-        
-    while (!isEmpty(queue.stack2)) {
-        push(queue.stack1, pop(queue.stack2));
-    }
-}
-
 
     dequeue() {
+        if (this.stack1.isEmpty()) {
+            throw new Error('Queue is empty');
+        }
         return this.stack1.pop();
     }
 }
+module.exports = PseudoQueue;
 
 
-const PQ = new PseudoQueue();
+const qq = new PseudoQueue();
 
+qq.enqueue(1);
+qq.enqueue(2);
+qq.enqueue(3);
 
-PQ.enQueue(1,2);
-PQ.enQueue(1,3);
-PQ.enQueue(1,4);
-
-console.log(PQ);
-
-console.log(PQ.dequeue()); // Output: 10
-console.log(PQ.dequeue()); // Output: 15
+console.log(qq.dequeue(1));
+console.log(qq.dequeue(2));
+console.log(qq.dequeue(3));
