@@ -45,60 +45,32 @@ class LinkedList {
     currentNode.next = node;
   }
 
-  insertBefore(value, newValue) {
-    if (!this.head) {
-      return;
-    }
-    if (this.head.value === value) {
-      this.insert(newValue);
-      return;
-    }
-
-    let currentNode = this.head;
-    while (currentNode.next) {
-      if (currentNode.next.value === value) {
-        const newNode = new Node(newValue);
-        newNode.next = currentNode.next;
-        currentNode.next = newNode;
-        this.size++;
-        return;
-      }
-      currentNode = currentNode.next;
-    }
-  }
-
-  insertAfter(value, newValue) {
-    if (!this.head) {
-      return;
-    }
-
-    let currentNode = this.head;
-    while (currentNode) {
-      if (currentNode.value === value) {
-        const newNode = new Node(newValue);
-        newNode.next = currentNode.next;
-        currentNode.next = newNode;
-        this.size++;
-        return;
-      }
-      currentNode = currentNode.next;
-    }
-  }
 
   zipLists(list1, list2) {
-    const zipList = new LinkedList();
-    let current1 = list1.head;
-    let current2 = list2.head;
+  let current1 = list1.head;
+  let current2 = list2.head;
+  let temp1, temp2;
 
-    while (current1 && current2) {
-      zipList.append(current1.value);
-      zipList.append(current2.value);
-      current1 = current1.next;
-      current2 = current2.next;
-    }
-    
-    return zipList;
+  while (current1 && current2) {
+    temp1 = current1.next;
+    temp2 = current2.next;
+
+    current2.next = temp1;
+    current1.next = current2;
+
+    current1 = temp1;
+    current2 = temp2;
   }
+
+  if (current2) {
+    list1.tail.next = current2;
+    list1.tail = list2.tail;
+  }
+
+  return list1;
+}
+
+
 
   toString() {
     let str = "";
@@ -127,7 +99,7 @@ list2.append(5);
 list2.append(9);
 list2.append(4);
 
-zipList=zipList.zipLists(list1, list2);
+zipList = zipList.zipLists(list1, list2);
 
 console.log(zipList.toString());
 

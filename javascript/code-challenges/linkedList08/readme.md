@@ -12,7 +12,7 @@ You have access to the Node class and all the properties on the Linked List clas
 
 ## Whiteboard Process
 <!-- Embedded whiteboard image -->
-![](LinkedList08.jpg)
+![](Copy of LinkedList08.jpg)
 
 
 ## Solution
