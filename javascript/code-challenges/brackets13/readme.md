@@ -17,5 +17,5 @@ Curly Brackets : {}
 
 ## Solution
 <!-- Show how to run your code, and examples of it in action -->
-[Linkedlist file](index.js)
+[code](index.js)
 [test]('./_test_/brackets.test.js')

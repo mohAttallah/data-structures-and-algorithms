@@ -30,6 +30,4 @@ describe('brackets  test ', () => {
         expect(brackets('{(})')).toBe(false);
     });
 
-    
-
 });
