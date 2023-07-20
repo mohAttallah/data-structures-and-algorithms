@@ -1,0 +1,15 @@
+{
+  "name": "treemax",
+  "version": "1.0.0",
+  "description": "<!-- Description of the challenge -->",
+  "main": "tree-max.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "jest": "^29.6.1"
+  }
+}
