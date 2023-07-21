@@ -1,7 +1,7 @@
 'use strict';
 
-const Node = require('../Node');
-const BinaryTree = require('../BinaryTree');
+const Node = require('../lib/Node');
+const BinaryTree = require('../lib/BinaryTree');
 
 let tree = null;
 
@@ -24,6 +24,18 @@ describe('Binary Tree testing', () => {
 
         tree = new BinaryTree(a);
     });
+    it('Can successfully instantiate an empty tree', () => {
+        const newTree = new BinaryTree();
+        expect(newTree.root).toBe(null);
+    });
+    it('Can successfully instantiate a tree with a single root node', () => {
+        const rootNode = new Node("root");
+        const newTree = new BinaryTree(rootNode);
+        expect(newTree.root.value).toEqual("root");
+        expect(newTree.root.left).toBe(null);
+        expect(newTree.root.right).toBe(null);
+    });
+
 
     it('contructor', () => {
         const newTree = new BinaryTree();
@@ -35,7 +47,7 @@ describe('Binary Tree testing', () => {
         expect(tree.preOrder()).toEqual(expectedResult);
     })
     it('postOrder testing', () => {
-        const expectedResult = ['e', 'd', 'c', 'f', 'b', 'a']
+        const expectedResult = ['f', 'b', 'd', 'e', 'c', 'a']
         expect(tree.postOrder()).toEqual(expectedResult);
     })
     it('inOrder testing', () => {

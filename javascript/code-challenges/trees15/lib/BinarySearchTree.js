@@ -38,7 +38,7 @@ class BinarySearchTree extends BinaryTree {
     }
 
     contains(value) {
-        return this.search(this.root, value)?true :false;
+        return this.search(this.root, value)? true :false;
     }
     
     search(node, value) {
