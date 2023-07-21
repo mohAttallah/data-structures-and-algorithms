@@ -18,10 +18,12 @@ class BinaryTree {
 
     postOrder() {
         let arr = [];
-        const traversal = node => {
-            if (node.right) traversal(node.right);
-            if (node.left) traversal(node.left);
-            arr.push(node.value);
+        const traversal = (node) => {
+            if (node) {
+                traversal(node.left);
+                traversal(node.right);
+                arr.push(node.value);
+            }
         };
         traversal(this.root);
         return arr;

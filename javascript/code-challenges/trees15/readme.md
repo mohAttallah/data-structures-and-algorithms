@@ -28,12 +28,16 @@
 ## Whiteboard Process
 <!-- Embedded whiteboard image -->
 #### Binary Tree
-![BinaryTree](BinaryTree.jpg)
+![BinaryTree](./assest/BinaryTree.jpg)
+![test](./assest/binaryTree.png)
+
 #### Binary Search Tree
-![Whiteboard](BinarySearchTree.jpg)
+![BinaryTree](./assest/BinarySearchTree.jpg)
+![test](./assest/binarysearchtest.png)
+
 
 ## Solution
 <!-- Show how to run your code, and examples of it in action -->
-[BinaryTree](BinaryTree.js)
-[BinarySearchTree](BinarySearchTree.js)
+[BinaryTree]('./lib/BinaryTree.js')
+[BinarySearchTree](''./lib/BinarySearchTree.js)
 [test](_test_)
