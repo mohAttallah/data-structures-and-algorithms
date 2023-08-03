@@ -5,10 +5,19 @@ const breadthFirst = require('../index.js');
 
 // Test the breadthFirst function
 describe('breadthFirst', () => {
+
+    
     test(" return Binary Tree is empty", () => {
         const emptyTree = new BinaryTree(null);
         expect(breadthFirst(emptyTree)).toBe('Binary Tree is empty');
     });
+    test('Failure', () => {
+        const emptyTree = new BinaryTree(null);
+        const result = breadthFirst(emptyTree);
+        const expected = 'Binary Tree is empty';
+        expect(result).toEqual(expected);
+    });
+
 
     test('return the breadth-first traversal of  tree', () => {
         const a = new Node(2);
@@ -20,8 +29,6 @@ describe('breadthFirst', () => {
         const g = new Node(5);
         const h = new Node(11);
         const k = new Node(4);
-
-
         a.left = b;
         a.right = c;
         b.left = d;
@@ -39,4 +46,19 @@ describe('breadthFirst', () => {
 
         expect(result).toEqual(expected);
     });
+    test(' return the breadth-first traversal of a tree with only one level', () => {
+        const a = new Node(1);
+        const b = new Node(2);
+        const c = new Node(3);
+        const d = new Node(4);
+        a.left = b;
+        a.right = c;
+        b.left = d;
+        const oneLevelTree = new BinaryTree(a);
+        const result = breadthFirst(oneLevelTree);
+        const expected = [1, 2, 3, 4];
+        expect(result).toEqual(expected);
+    });
+
+
 });
