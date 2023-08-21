@@ -20,8 +20,5 @@ function insertionSort(input) {
     }
     return sorted;
 }
+module.exports = insertionSort
 
-let arrUnSort = [7, 3, 9, 2, 5];
-const sortedArray = insertionSort(arrUnSort);
-console.log("Unsorted Array:", arrUnSort);
-console.log("Sorted Array:", sortedArray);
