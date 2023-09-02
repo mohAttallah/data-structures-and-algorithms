@@ -17,6 +17,38 @@ class LinkedList{
             current.next = newNode;
         }
     }
+    values() {
+        let values = [];
+        let current = this.head;
+        while (current) {
+            values.push(current.value)
+            current = current.next;
+        }
+        return values;
+    }
+    check(value) {
+        let current = this.head;
+        while (current) {
+            if (current.value === value) {
+                return true; 
+            }
+            current = current.next;
+        }
+        return false; 
+    }
+    replace(oldValue, newValue) {
+        let current = this.head;
+        while (current) {
+            if (current.value === oldValue) {
+                current.value = newValue;
+                return true; 
+            }
+            current = current.next;
+        }
+        return false; 
+    }
+
+
 }
 
 module.exports = LinkedList; 
