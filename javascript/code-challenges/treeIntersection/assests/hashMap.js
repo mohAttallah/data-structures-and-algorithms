@@ -7,7 +7,6 @@ class Hashtable {
         this.map = new Array(size);
     }
     hash(key) {
-        console.log()
         return key.split('').reduce((p, n) => {
             return p + n.charCodeAt(0)
         }, 0) * 599 % this.size;
@@ -16,13 +15,24 @@ class Hashtable {
         const hashedKey = this.hash(key);
         if (!this.map[hashedKey]) this.map[hashedKey] = new LinkedList();
         const entry = { [key]: value }
-
-        console.log(entry)
+        this.map[hashedKey].insert(entry);
+    }
+    has(key) {
+        const hashedKey = this.hash(key);
+        const record = this.map[hashedKey];
+        return record !== undefined ? true : false
+    }
+    keys() {
+        const keys = []
+        this.map.forEach((record) => {
+            keys.push(...record.values())
+        })
+        return keys;
     }
 }
 
-const makeHash = new Hashtable(19);
-makeHash.set('Waleed', 'Instructor')
-console.log(makeHash.hash('Mohammad'))
+// const makeHash = new Hashtable(19);
+// makeHash.set('Waleed', 'Instructor')
+// console.log(makeHash.hash('Mohammad'))
 
 module.exports = Hashtable;

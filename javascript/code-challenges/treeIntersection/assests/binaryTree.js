@@ -36,6 +36,20 @@ class BinaryTree {
             }
         }
     }
+    postOrder() {
+        const result = [];
+        this.postOrderRecursive(this.root, result);
+        return result;
+    }
+
+    postOrderRecursive(node, result) {
+        if (node !== null) {
+            this.postOrderRecursive(node.left, result);
+            this.postOrderRecursive(node.right, result);
+            result.push(node.data);
+        }
+    }
 }
 
-module.exports= BinaryTree;
+
+module.exports = BinaryTree;
