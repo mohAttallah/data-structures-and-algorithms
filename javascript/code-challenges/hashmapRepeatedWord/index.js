@@ -24,8 +24,9 @@ function repeatedWord(str) {
             maxIndex = i;
         }
     }
-
     let reptedWord = Object.keys(arr[longestIndex][0]).pop();
     return reptedWord;
 }
+// does not work without space fix it 
+console.log(repeatedWord(" Hello  s "))
 module.exports = repeatedWord;
