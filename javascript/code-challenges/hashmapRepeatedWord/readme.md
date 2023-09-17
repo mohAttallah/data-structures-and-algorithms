@@ -8,5 +8,7 @@ Write a function called repeated word that finds the first word to occur more th
 ![whiteboard](./assest/repetedwords.jpg)
 
 ### code & unit test
+![testCase](./assest/testCase%20.png)
+
 [code](./index.js)
 [Unit test](./_test_/hashMapRepetedWord.test.js)

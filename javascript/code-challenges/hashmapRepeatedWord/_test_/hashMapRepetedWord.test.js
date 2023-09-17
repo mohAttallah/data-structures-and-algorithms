@@ -18,4 +18,11 @@ describe('repeatedWord function', () => {
         const result = repeatedWord(input);
         expect(result).toBe('hello');
     });
+
+    it('handle a single word with a spcae before', () => {
+        const input = " hello";
+        const result = repeatedWord(input);
+        expect(result).toBe('hello');
+    });
+    
 });
