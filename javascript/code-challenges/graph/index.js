@@ -50,6 +50,7 @@ class Graph {
 }
 
 
+
 module.exports = Graph;
 const one = new Vertext("1");
 const two = new Vertext("2");
@@ -65,7 +66,6 @@ graph.addEdge(two, three);
 
 console.log(graph.getVertices())
 console.log(graph.size())
-
 
 // for (const [k, v] of graph.adjacencyList.entries()) {
 //     console.log('key =>', k, 'V=> ', v)

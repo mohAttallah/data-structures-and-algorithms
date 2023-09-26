@@ -44,8 +44,63 @@ class Graph {
         return collection.length > 0 ? collection : "there are no vertices";
     }
 
+    BFS(startNode) {
+        if (!this.adjacencyList.has(startNode)) {
+            return null;
+        }
+
+        const visited = new Set();
+        const result = [];
+
+        const bfs = (currentNode) => {
+            visited.add(currentNode)
+            result.push(currentNode)
+
+            const neighbors = this.adjacencyList.get(currentNode);
+            for (const neighbor of neighbors) {
+                if (!visited.has(neighbor.vertex)) {
+                    bfs(neighbor.vertex)
+                }
+            }
+        };
+
+        bfs(startNode);
+
+        return result;
+    }
+
+
+
     size() {
         return this.adjacencyList.size;
     }
 }
+
+module.exports = Graph;
+
+const graph = new Graph();
+
+const A = 'A'
+const B = 'B'
+const C = 'C'
+const D = 'D'
+const E = 'E'
+
+graph.addVertext(A);
+graph.addVertext(B);
+graph.addVertext(C);
+graph.addVertext(D);
+graph.addVertext(E)
+
+graph.addEdge(A, B);
+graph.addEdge(A, C);
+graph.addEdge(B, D);
+graph.addEdge(D, E);
+graph.addEdge(E, A);
+
+
+console.log('A:', graph.BFS(A));
+console.log('D:', graph.BFS(D));
+console.log('E:', graph.BFS(E));
+
 
