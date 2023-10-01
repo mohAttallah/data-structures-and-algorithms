@@ -1,0 +1,15 @@
+{
+  "name": "graphbusinesstrip",
+  "version": "1.0.0",
+  "description": "Challenge Type: *New Implementation* Author : **Mohammad Attallah**",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "jest": "^29.7.0"
+  }
+}
